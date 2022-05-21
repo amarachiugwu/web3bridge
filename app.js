@@ -27,5 +27,6 @@ function addLike(id) {
     }
     
     
-    
 }
+
+module.exports = addLike;

@@ -42,7 +42,6 @@ const MOVIES = [
     }
 ];
 
-
 var container = document.getElementById('movies');
 
 function fetchMovies () {
@@ -56,38 +55,71 @@ function fetchMovies () {
     }
 }
 
+function movieSort (movies, size) 
+{
+    for (let step = 0; step < (size - 1); ++step) {
+        let swapped = 0;
+        for (let i = 0; i < (size - step - 1); ++i) {
+
+            if (movies[i].likes < movies[i + 1].likes) {
+                
+                let temp;
+                temp = movies[i];
+                movies[i] = movies[i + 1];
+                movies[i + 1] = temp;
+
+                swapped = 1;
+            }
+        }
+
+        if (swapped == 0) {
+            break;
+        }
+    }return movies;
+};
+
+
 function loadMovies() {
 
     let movies = fetchMovies();
+    var size = Object.keys(movies).length;
 
+    let sorted = movieSort(movies, size);
+    console.log(sorted);
 
     let movieBoxes = "";
-    for (let index = 0; index < movies.length; index++) {
-        movieBoxes += "<div class='box'><div class='img'><img src='"+movies[index].image+"'></div><h2>"+movies[index].name+"</h2><div class='like'><img  class='likeimg' src='images/like.png'><span id='0' class='likecount'>"+movies[index].likes+"</span></div></div>";
+    for (let index = 0; index < sorted.length; index++) {
+        movieBoxes += "<div class='box'><div class='img'><img src='"+sorted[index].image+"'></div><h2>"+sorted[index].name+"</h2><h4>$ "+sorted[index].price+"</h4><div class='like'><img  class='likeimg' src='images/like.png' id='"+sorted[index].id+"'><span class='likecount'>"+sorted[index].likes+"</span></div></div>";
     }
     
     container.innerHTML = movieBoxes;
 }
 
+$(document).ready(function() {
+    $(".likeimg").click(function(event) {
+        console.log(event.target.id);
+        addLike(event.target.id);
+    });
+});
 
 function addLike(id) {
 
-    let movies = fetchMovies();
- 
-     movies.map((movie) => {
-         if(movie.id == id){
-             let x = 
-             {
-                 ...movie,
-                 "likes" : movie.likes + 1 ,
-                 "price" : movie.price * (movie.likes + 1)
-             }
-             movies[id] = x;
-             localStorage.setItem("movies", JSON.stringify(movies));
-         }
-     });
- 
-    //  loadMovies();    
- }
+   let movies = fetchMovies();
 
-//  module.exports = addLike;
+    movies.map((movie) => {
+        if(movie.id == id){
+            let x = 
+            {
+                ...movie,
+                "likes" : movie.likes + 1 ,
+                "price" : movie.price + (movie.likes + 1)
+            }
+            movies[id] = x;
+            localStorage.setItem("movies", JSON.stringify(movies));
+        }
+    });
+
+    loadMovies();    
+}
+
+// module.exports = movieSort;

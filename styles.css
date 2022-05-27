@@ -19,14 +19,19 @@ header {
 }
 .container .box{
 	width: 23%;
-	height: 330px;
+	height: 380px;
 	margin: 1%;
 	background-color: #fff;
 	float: left;
 }
-.container .box  h2{
+.container .box  h2, .container .box h4{
 	text-align: center;
 	color: maroon;
+}
+
+.container .box h4{
+	text-align: center;
+	color: #2A1C1B;
 }
 img{
 width: 100%;

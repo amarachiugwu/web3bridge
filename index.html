@@ -4,88 +4,18 @@
 	<title>Nolly-Flix</title>
 	<meta charset="utf-8">
 	<meta name="author" content="Maraco Online shopping.com">
-  <meta name="Keyword" content="movies,sales,Black friday,CD,DVD,online shopping,">
-  <meta name="description" content="We provide clients with the top best movies, cds, dvds, musics and more ">
+    <meta name="Keyword" content="movies,sales,Black friday,CD,DVD,online shopping,">
+    <meta name="description" content="We provide clients with the top best movies, cds, dvds, musics and more ">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
+<body onload="loadMovies()">
 	<header>
 		<h1>Nolly-Flix</h1>
 	</header>
 
 	<section class="container">
-		<section class="movies">
-			    
-            <div class="box">
-                
-                <div class="img">
-                    <img src="images/a-man-called-God.jpg">
-                </div>
-                <h2>The Redemption</h2> 
-                <div class="like">
-                    <img  class="likeimg" src="images/like.png"  onclick="addLike(1)">
-                    <span class="likecount">0</span>
-                </div>
-                
-            </div>   
-
-            <div class="box">
-                <div class="img">
-                    <img src="images/forest-soldier.jpg">
-                </div>
-                <h2>Africa’s Tech Roots</h2> 
-                <div class="like">
-                    <img  class="likeimg" src="images/like.png"  onclick="addLike(2)">
-                    <span class="likecount">0</span>
-                </div>
-            </div>   
-
-            <div class="box">
-                <div class="img">
-                    <img src="images/girl.jpg">
-                </div>
-                <h2>The Invisible Man</h2> 
-                    <div class="like">
-                    <img  class="likeimg" src="images/like.png"  onclick="addLike(3)">
-                    <span class="likecount">0</span>
-                </div>
-            </div>   
-
-            <div class="box">
-                <div class="img">
-                    <img src="images/kun-fu girl.jpg">
-                </div>
-                <h2>The Complicated Project</h2> 
-                <div class="like">
-                    <img  class="likeimg" src="images/like.png"  onclick="addLike(4)">
-                    <span class="likecount">0</span>
-                </div>
+		<section class="movies" id="movies">
             
-            </div>   
-
-            <div class="box">
-                <div class="img">
-                    <img src="images/mercelino.jpg">
-                </div>
-                <h2>Simply Javascript</h2> 
-                <div class="like">
-                    <img  class="likeimg" src="images/like.png"  onclick="addLike(5)">
-                    <span class="likecount">0</span>
-                </div>
-            
-            </div>   
-
-            <div class="box">
-                <div class="img">
-                    <img src="images/nikita.jpg">
-                </div>
-                <h2>The New Web</h2> 
-                <div class="like">
-                    <img  class="likeimg" src="images/like.png"  onclick="addLike(6)">
-                    <span class="likecount">0</span>
-                </div>
-            
-            </div>  
 		</section>
 	</section>
 	<script src="app.js"></script>

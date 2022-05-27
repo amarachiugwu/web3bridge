@@ -78,7 +78,6 @@ function movieSort (movies, size)
     }return movies;
 };
 
-
 function loadMovies() {
 
     let movies = fetchMovies();
@@ -96,10 +95,10 @@ function loadMovies() {
 }
 
 $(document).ready(function() {
-    $(".likeimg").click(function(event) {
-        console.log(event.target.id);
+    $(document).on('click', '.likeimg', function(event){
+		console.log(event.target.id);
         addLike(event.target.id);
-    });
+	});
 });
 
 function addLike(id) {

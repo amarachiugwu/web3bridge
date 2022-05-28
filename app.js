@@ -42,8 +42,6 @@ const MOVIES = [
     }
 ];
 
-var container = document.getElementById('movies');
-
 function fetchMovies () {
     if (localStorage.movies) {
         let movies = JSON.parse(localStorage.getItem("movies"));
@@ -55,7 +53,7 @@ function fetchMovies () {
     }
 }
 
-function movieSort (movies, size) 
+function sortMovies (movies, size) 
 {
     for (let step = 0; step < (size - 1); ++step) {
         let swapped = 0;
@@ -79,12 +77,11 @@ function movieSort (movies, size)
 };
 
 function loadMovies() {
-
+    let container = document.getElementById('movies');
     let movies = fetchMovies();
-    var size = Object.keys(movies).length;
+    let size = Object.keys(movies).length;
 
-    let sorted = movieSort(movies, size);
-    console.log(sorted);
+    let sorted = sortMovies(movies, size);
 
     let movieBoxes = "";
     for (let index = 0; index < sorted.length; index++) {
@@ -93,13 +90,6 @@ function loadMovies() {
     
     container.innerHTML = movieBoxes;
 }
-
-$(document).ready(function() {
-    $(document).on('click', '.likeimg', function(event){
-		console.log(event.target.id);
-        addLike(event.target.id);
-	});
-});
 
 function addLike(id) {
 
@@ -121,4 +111,5 @@ function addLike(id) {
     loadMovies();    
 }
 
-// module.exports = movieSort;
+module.exports = fetchMovies;
+module.exports = sortMovies;

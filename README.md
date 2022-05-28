@@ -11,7 +11,7 @@ You can [view](https://web3bridgeamarachi.netlify.app) this project on netlify, 
 
 ## Test
 ### 3.
-Open a your prefereed terminal and navigate to the cloned project directory run `npm install` to install packages
+Open your prefered terminal and navigate to the cloned project directory run `npm install` to install packages
 
 ### 4.
 This application uses [jest npm package](https://www.npmjs.com/package/jest) for test, and by running npm install as instructed above you already have the package installed

@@ -6,7 +6,7 @@
 clone this [repository](https://github.com/amarachiugwu/web3bridge.git) by running this command `git clone https://github.com/amarachiugwu/web3bridge.git`
 
 ### 2.
-You can [view](https://web3bridgeamarachi.netlify.app) this project on netlify, you can also use github pages to display your app, to set up github pages for your cloned project visit [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+You can [view](https://web3bridgeamarachi.netlify.app) this project on [netlify](https://www.netlify.com/), you can also use github pages to display your app, to set up github pages for your cloned project visit [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 
 
 ## Test

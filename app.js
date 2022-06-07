@@ -65,7 +65,7 @@ function sortMovies (movies, size)
                 temp = movies[i];
                 movies[i] = movies[i + 1];
                 movies[i + 1] = temp;
-
+        
                 swapped = 1;
             }
         }
